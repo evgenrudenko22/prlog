@@ -302,12 +302,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "prlog"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "68f8ffe26856dcdc58d50696abfbaaac6605a8e72185c7992d676121f3b918e6"
+dependencies = [
+ "chrono",
+ "colored",
+ "log",
+]
+
+[[package]]
 name = "prlog-cli"
 version = "0.1.0"
 dependencies = [
  "clap",
  "colored",
- "prlog",
+ "prlog 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde",
  "serde_json",
 ]

@@ -11,7 +11,7 @@ keywords = ["logger", "cli", "viewer", "json", "log-viewer"]
 categories = ["development-tools", "command-line-utilities"]
 
 [dependencies]
-prlog = { path = "../prlog" }
+prlog = { version = "0.1.0" }
 
 clap = { version = "4.6.1", features = ["derive"] }
 colored = "3.1.1"

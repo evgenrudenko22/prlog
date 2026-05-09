@@ -18,7 +18,7 @@ impl LogEntry {
     }
 
     pub fn parse_line(line: &str) -> Result<LogEntry, Box<dyn Error>> {
-        let parts: Vec<&str> = line.splitn(4, ':').collect();
+        let parts: Vec<&str> = line.splitn(4, '|').collect();
 
         if parts.len() == 4 {
             let level = parts[0];

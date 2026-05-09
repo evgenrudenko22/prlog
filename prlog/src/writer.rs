@@ -9,7 +9,7 @@ pub fn write(path_buf: PathBuf, entry: &LogEntry) {
         .append(true)
         .open(path_buf.as_path())
     {
-        let line = format!("{}:{}:{}:{}\n",
+        let line = format!("{}|{}|{}|{}\n",
             entry.level, entry.time_stamp, entry.target, entry.message);
 
         let _ = file.write_all(line.as_bytes());

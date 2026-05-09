@@ -1,8 +1,7 @@
 ﻿use std::fs::File;
 use std::path::PathBuf;
 use log::{Level, Metadata, Record};
-use crate::entry::LogEntry;
-use crate::{formatter, writer};
+use crate::formatter;
 
 pub struct PrLogger {
     config: Config
@@ -10,6 +9,7 @@ pub struct PrLogger {
 
 impl PrLogger {
     pub fn new(config: Config) -> PrLogger {
+        #[cfg(feature = "file-log")]
         File::create(&config.save_path).unwrap();
         PrLogger { config }
     }
@@ -31,12 +31,18 @@ impl log::Log for PrLogger {
 
             let console_out = formatter::format_console(&level, &time_str, target, &message);
             println!("{}", console_out);
+            #[cfg(feature = "file-log")]
+            {
+                use crate::writer;
+                use crate::entry::LogEntry;
 
-            let entry = LogEntry::new(level,
-                                      target.to_string(),
-                                      now.to_string(),
-                                      message);
-            writer::write(self.config.save_path(), &entry);
+                let entry = LogEntry::new(level,
+                                          target.to_string(),
+                                          now.to_string(),
+                                          message);
+
+                writer::write(self.config.save_path(), &entry);
+            }
         }
     }
 

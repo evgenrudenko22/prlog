@@ -1,5 +1,6 @@
 mod core;
 pub mod formatter;
+#[cfg(feature = "file-log")]
 mod writer;
 pub mod entry;
 

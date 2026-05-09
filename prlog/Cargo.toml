@@ -7,8 +7,9 @@ description = "A logger that writes to console and a structured file."
 license = "MIT"
 
 [features]
-default = ["colors"]
+default = ["colors", "file-log"]
 colors = ["dep:colored"]
+file-log = []
 
 [dependencies]
 log = { version = "0.4.29", features = ["std"] }

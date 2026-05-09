@@ -8,7 +8,7 @@
             "INFO" => level.green(),
             _ => level.normal(),
         };
-        format!("[{}] [{}] [{}]: {}", level_colored, time.normal(), target.blue(), msg)
+        format!("[{}] [{}] [{}]: {}", level_colored, time.bright_black(), target.blue(), msg)
     }
     #[cfg(not(feature = "colors"))]
     {

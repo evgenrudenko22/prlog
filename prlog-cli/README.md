@@ -36,11 +36,11 @@ prlog-cli app.prlog --json > report.json
 ```
 
 ## Arguments
- | Аргумент   | Коротко | Опис                                       |
- |------------|---------|--------------------------------------------|
- | `--target` | `-t`    | Фільтрує записи за назвою модуля (target). |
- | `--json`   | -       | Виводить результат у форматі масиву JSON.  |
- | `--help`   | `-h`    | Показує довідку з використання.            |
+ | Аргумент   | Коротко | Опис                                     |
+ |------------|---------|------------------------------------------|
+ | `--target` | `-t`    | Filters entries by module name (target). |
+ | `--json`   | -       | Outputs the result in JSON array format. |
+ | `--help`   | `-h`    | Shows usage help                         |
 
 ## JSON Export
 Use the `--json` flag to integrate with other tools such as `jq`:

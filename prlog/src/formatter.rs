@@ -1,4 +1,12 @@
-﻿pub fn format_console(level: &str, time: &str, target: &str, msg: &str) -> String {
+﻿//! Module for styling and formatting output.
+//!
+//! Responsible for preparing lines for printing to the terminal.
+//! If the `colors` feature is enabled, the module uses ANSI codes to colorize
+//! different logging levels (Error - red, Warn - yellow, etc.),
+//! which makes reading logs in the console much more convenient.
+
+/// Function to format log information into pretty string
+pub fn format_console(level: &str, time: &str, target: &str, msg: &str) -> String {
     #[cfg(feature = "colors")]
     {
         use colored::*;

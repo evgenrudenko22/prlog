@@ -5,6 +5,9 @@ edition = "2024"
 authors = ["Evgen <evgenru22@urk.net>"]
 description = "A logger that writes to console and a structured file."
 license = "MIT"
+readme = "README.md"
+keywords = ["logger", "cli", "logging", "utility"]
+categories = ["development-tools::debugging"]
 
 [features]
 default = ["colors", "file-log"]

@@ -1,5 +1,12 @@
-﻿use std::error::Error;
+﻿//! Data structures for logging.
+//!
+//! The module defines `LogEntry` — a basic unit of information that contains
+//! a timestamp, severity level, target module, and the message itself.
+//! This data is used both for writing to a file and for further parsing in the CLI.
 
+use std::error::Error;
+
+/// Struct that stores information about record
 pub struct LogEntry {
     pub level: String,
     pub time_stamp: String,

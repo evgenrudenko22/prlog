@@ -1,8 +1,15 @@
-﻿use std::fs::File;
+﻿//! Implementation of the main logger.
+//!
+//! This module contains the `PrLogger` structure, which is responsible for processing each
+//! log message received through the `log` facade. It coordinates
+//! between formatting for the console and writing to the file system
+//!
+use std::fs::File;
 use std::path::PathBuf;
 use log::{Level, Metadata, Record};
 use crate::formatter;
 
+/// Main part of logger, implements `log::Log` trait
 pub struct PrLogger {
     config: Config
 }
@@ -49,6 +56,7 @@ impl log::Log for PrLogger {
     fn flush(&self) {}
 }
 
+/// Config where settings for `PrLogger` are stored
 #[derive(Debug, Clone)]
 pub struct Config {
     max_log_level: Level,

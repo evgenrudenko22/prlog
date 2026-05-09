@@ -1,4 +1,11 @@
-﻿use std::fs::OpenOptions;
+﻿//! Module for working with the file system.
+//!
+//! Provides reliable logging to disk. Uses the DSV format
+//! (Delimiter Separated Values) with a vertical bar `|` as a separator.
+//! This avoids conflicts with colons in time and provides
+//! high write speed and file compactness.
+
+use std::fs::OpenOptions;
 use std::io::Write;
 use std::path::PathBuf;
 use crate::entry::LogEntry;

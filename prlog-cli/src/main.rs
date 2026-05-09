@@ -28,8 +28,6 @@ fn main() -> io::Result<()> {
     let file = File::open(&args.path)?;
     let reader = BufReader::new(file);
 
-    println!("{}", "--- Opening log-file ---".bright_black().bold());
-
     let mut entries = Vec::new();
 
     for line in reader.lines() {

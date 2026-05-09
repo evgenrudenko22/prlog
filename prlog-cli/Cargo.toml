@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 authors = ["Evgen <evgenru22@urk.net>"]
 description = "CLI tool to view and filter prlog files."
+repository = "https://github.com/evgenrudenko22/prlog"
 license = "MIT"
 readme = "README.md"
 keywords = ["logger", "cli", "viewer", "json", "log-viewer"]
